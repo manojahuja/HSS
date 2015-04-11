@@ -30,7 +30,7 @@ void HumanInterface::userInterfaceSM() {
 	} UI_EngineStates_t ;
 
 
-	static UI_EngineStates_t previousState, currentState;
+	static UI_EngineStates_t previousState=Default_st, currentState=Default_st;
 
 	int userChoice;
 
