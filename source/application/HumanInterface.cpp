@@ -20,7 +20,7 @@ HumanInterface::HumanInterface(int sysState):systemState(sysState) {
 		init_userInterfaceSM();	
 	}
 
-void HumanInterface::userInterfaceSM() {
+void HumanInterface::userInterfaceSM(PasswordManagement passwordManagent) {
 	typedef enum {
 		Default_st,
 		Admin_st,
@@ -71,7 +71,7 @@ void HumanInterface::userInterfaceSM() {
 			// write state do activity code here
 			
 
-
+			passwordManagement.requestAuthentication('admin','password');
 
 
 			// write the transtions here
@@ -86,6 +86,9 @@ void HumanInterface::userInterfaceSM() {
 			break;
 	
 		case User_st:
+
+
+			passwordManagement.requestAuthentication('user','password');
 			break;
 	}	
 
