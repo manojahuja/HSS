@@ -22,3 +22,14 @@ using namespace std;          //|
 //-----------------------------|
 
 
+
+
+//------------------------------|	
+		 	      //|	    	    
+  #define ADMIN 1	      //|			
+#define DEFAULT 385744        //|
+ #define ALERT 10             //|==============> Belongs to PasswordManagement Class
+#define USER 2                //|
+                              //|
+                              //|
+//-----------------------------|

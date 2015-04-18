@@ -1,5 +1,5 @@
-// reading a text file
-//#include"SystemStat.h"
+//// reading a text file
+//#include"SystemControllerI.cpp"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -11,18 +11,18 @@ using std::cin;
 using std::cout;
 using std::string;
 using namespace std;
-
+//class SystemControllerI;
 //--------------------------------Please Write in Seprate file And name it System.h
 
 class PasswordManagement {
 	private :char uPassword[20],aPassword[20],dPassword[20];
 		 int userType;
 	public : //int SetSysStat();
-		  int SetPassword(int);
+		  int  SetPassword(int);
 		   int GetPassword(int);
-//		  friend GetAuthentication();
+//        	  friend int SystemControllerI::InvokePassword(PasswordManagement);//friend
                      int Default(int);
-                 
+                               
 		  
 	  	 // int SetAlaramStat();		  
 		  };
@@ -142,4 +142,36 @@ int PasswordManagement::GetPassword(int userType)
 		
 		
 		};
+
+
+
+int main()
+    {
+
+      int userType=1;//Value came from UserInterface;
+
+  PasswordManagement USER_PASSWORD,ADMINPASSWORD;
+// cout<<sizeof(USER_PASSWORD);
+     	       
+
+
+//     cout<<"HEllo";
+   //   SystemControllerI PCHECK;
+     //          int ret;
+//	cout<<ret;
+       // int   ret=PASSWORD_CHECK.SelfCheck(0);
+         //       if(ret==0&&userType==ADMIN)
+	//	  ret= PCHECK.InvokePassword(ADMIN_PASSWORD);
+	//	else
+	//	  ret= PCHECK.InvokePassword(USER_PASSWORD);
+             // GetPassword(userType);
+//	 else if(ret==1&&userType==2)
+	//	
+//		 int t;
+//		 GetPassword(userType);
+          
+
+//        SystemControllerI Auth;
+ //	 ret=Auth.Authentication(ret,userType);
+              }
 

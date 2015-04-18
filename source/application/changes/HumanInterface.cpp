@@ -1,18 +1,5 @@
 #include"system.h"
-//#include "string.h"
-//#include"stdlib.h"
-//#include"SystemControllerI.cpp"
-//#define NEWLINE 0;
-/*
-using std::cin;
-using std::cout;
-using std::string;
-using std::endl;
-#define NEWLINE 0;
-*/
 
-//--------------------------------------------------------------------------------
-//class SystemController ;
 
 class HumanInterface {        
 	private:  char systemName[20];
@@ -33,7 +20,7 @@ void HumanInterface:: WhiteSpace(int cursurePosition,char data)
 
 	  if(cursurePosition>lineEnd)
 		  cout<<"Please Do Not Cross The Limit\n";
-	    else if(cursurePosition<=102&&data=='=')
+	    else if(cursurePosition<=102&& data == '=')
 		     {
 	  	for(int start=1;start<=cursurePosition;start++)
                     cout<<"=";
@@ -47,9 +34,9 @@ void HumanInterface:: WhiteSpace(int cursurePosition,char data)
 	  };
 
 void HumanInterface::Banner(){
-	system("reset");
+	system("clear");
 	WhiteSpace(102,'=');
-	WhiteSpace(32,' ');
+	WhiteSpace(45,' ');
 	cout<<systemName<<endl;       
 	WhiteSpace(102,'=');
 	cout<<endl;
@@ -67,10 +54,14 @@ strcpy((this->commandName),"@@@@@");
 
 	
 int  HumanInterface::UserInterface(void) {
-			   HomeSecurityInfo();
+ system("reset");
+
+Head :		   
+	 HomeSecurityInfo();
                            //
 		   	   //cout<<systemName<<endl;	   
-                           //WhiteSpace(102);  
+                           //WhiteSpace(102);
+                                
 		                Banner();	   
                    		cout<<"Enter You Choice\n";
 				cout<<"please enter the choice 1. user 2. admin\n";
@@ -82,30 +73,38 @@ int  HumanInterface::UserInterface(void) {
 			// write the transtions here
 			//
 			if (userType==1) {
-				strcpy(this->commandName,"Admin#~> "); 
+				/*strcpy(this->commandName,"Admin#~> "); 
 				cout<<"Enter Password\n";
 				
 				cout<<commandName;
 				cin>>userType;
-                                Banner();
+                                Banner();*/
+                                 return(userType); 
 			
 			}
 			  else if (userType==2) 
 			  { 
 		             strcpy(this->commandName,"User#~> ");
 			     cout<<"Enter Password ";
-			     cout<<commandName;
+			   /*  cout<<commandName;
 			     cin>>userType;
-			     Banner();
+			     Banner();*/
+                           return(userType);
 				
-			} else
+			} else 
 		       	{
 				cout << "\nuser has entered the wrong selection value\n";
 			
+                            
 			}
-			return 0;
+                            goto Head ;
 };
 		
-			
-/*int main()
-{}*/
+int main()
+{
+
+HumanInterface HUMAN_OBJECT1;
+int userType=HUMAN_OBJECT1.UserInterface();
+HUMAN_OBJECT1.Banner();
+//cout<<"USerType= "<<userType <<"OK"<<endl;
+}

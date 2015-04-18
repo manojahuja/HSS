@@ -34,21 +34,12 @@ int HumanInterface::getch(void)
 				        ch = getchar();
 				   // if(getchar()
 					    tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
-					         //return ch;
+					         return ch;
 	//	getch(void);				
     }
 
 
 
-
-
-//        strcpy (str3,"copy successful");
-// printf ("str1: %s\nstr2: %s\nstr3: %s\n",str1,str2,str3);
-//	    return 0;
-	
-	/*strcpy(systemName,"HSS");
-cout<<systemName;
-*/
 
 
 	int main()
@@ -57,7 +48,8 @@ int userType;
 HumanInterface t;
 char i[20];
 int a=0;
-while(1){
+while(1)
+{
  i[a]=t.getch();
  
 if(a==10||i[a]==10)

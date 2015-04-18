@@ -1,13 +1,9 @@
-//reading a text file
-//#include"SystemStat.h"
-
-//#define 1 Admin
-//#define 2 User
-//#define ALERT 10
-//using std::cin;
-//using std::cout;
-//using std::string;
-//using namespace std;
+#include"system.h"
+#define ALERT 10
+using std::cin;
+using std::cout;
+ using std::string;
+using namespace std;
 
 //--------------------------------Please Write in Seprate file And name it System.h
 
@@ -18,15 +14,34 @@ class SystemControllerI {
 	private : //int SetSysStat();
 	public : int SelfCheck(int);	
 	public  : int Authentication(int);
+	public : int InvokePassword(class);	  
 		   //friend GetAuthentication();
 
-		  
-	  	 // int SetAlaramStat();		  
+		 int getch(void);
+	      // int SetAlaramStat();		  
 		  	};
 //----------------------------X-----------X--------------X-----------X-----------------
+int SystemControllerI::InvokePassword(class temp)
+{
+                     
 
+return(0);
+};
 
-int SystemControllerI::SelfCheck(int attemp)
+int SystemControllerI::getch(void)
+    {
+	   struct termios oldattr, newattr;
+	        int ch;
+		  tcgetattr( STDIN_FILENO, &oldattr );
+	  	      newattr = oldattr;
+			   newattr.c_lflag &= ~( ICANON | ECHO );
+		     tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
+	          ch = getchar();
+	     tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
+        return ch;
+
+};
+int SystemControllerI::SelfCheck(int a)
 	{
 	char tempPass[10],tempPass2[10];
 			int i=0;
@@ -34,10 +49,52 @@ int SystemControllerI::SelfCheck(int attemp)
 				loop: i = i + 1;
 		 	for(int i=0; i<10; tempPass[i]='\0',tempPass2[i]='\0',++i);
 				cout<<"Enter Your Password\n";
-                       		cin>>tempPass;
-				cout<<"Retype Your Passowrd";
-		                cin>>tempPass2;
-			        int t=strcmp(tempPass,tempPass2);
+                                int lop=0;
+					while(1)
+						{
+						  tempPass[lop]=getch();
+
+	                                            if(lop==10||tempPass[lop]==10)
+	                                                {
+							if(lop==10&&tempPass[lop]!=10)
+							 {
+	 						cout<<"Passward is Too Long Please Retype\n";
+	 							system("pause");
+                                                             	 goto  loop;
+						         }
+							++lop;
+			                                tempPass[lop]='\0';
+				  			break;
+							}
+						    						
+	                                    lop++;
+			                        }
+
+                     			cout<<"Retype Your Passowrd";
+		               
+				lop=0;
+		
+					while(1)
+						{
+						  tempPass2[lop]=getch();
+
+	                                            if(lop==10||tempPass2[lop]==10)
+	                                                {
+							if(lop==10&&tempPass2[lop]!=10)
+							 {
+	 						cout<<"Passward is Too Long Please Retype\n";
+	 							system("pause");
+                                                             	 goto  loop;
+						         }
+							++lop;
+			                                tempPass2[lop]='\0';
+				  			break;
+							}
+						    						
+	                                    lop++;
+			                        }
+
+int t=strcmp(tempPass,tempPass2);
 				 if(t==0)
 				{
                                 //cout<<t;
@@ -47,7 +104,9 @@ int SystemControllerI::SelfCheck(int attemp)
 				 else if(i<3)
 					  {
 					system("reset");
-					       	  goto loop;
+					       	 
+//Banner;
+ goto loop;
 					  } 
 				 	 
 					else{
@@ -78,22 +137,4 @@ int  SystemControllerI::Authentication(int retVal)
 		
 		};
 				
-int main()
-{
-	int userType=0;
-       cout<<"HEllo";
-	SystemControllerI PCHECK;
-	int ret;
-//	cout<<ret;
-	ret=PCHECK.SelfCheck(0);
-         if(ret==0&&userType==1)
-              GetPassword(userType);
-	 else if(ret==1&&userType==2)
-		 GetPassword(userType);
-          else
-	  {}
 
-        SystemControllerI Auth;
- 	 ret=Auth.Authentication(ret,userType);
-	
-};
