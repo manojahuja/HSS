@@ -1,0 +1,31 @@
+//------------------------------|	
+#include"iostream"  	      //|	    	    
+#include "string.h"   	      //|			
+#include"stdlib.h"     	      //|
+#define NEWLINE 0;            //|==============> Belongs to HumanInterface Class
+using std::cin;               //|
+using std::cout;              //|
+using std::string;            //|  
+using std::endl; 
+
+class HumanInterface::getch(void)
+{
+	public : int getch(void);
+};
+
+
+int HumanInterface::getch(void)
+    {
+	   struct termios oldattr, newattr;
+	        int ch;
+		  tcgetattr( STDIN_FILENO, &oldattr );
+	  	      newattr = oldattr;
+			   newattr.c_lflag &= ~( ICANON | ECHO );
+		     tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
+	          ch = getchar();
+	     tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
+        return ch;
+
+};
+int main()
+{}
