@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Button1	switch_drv.c	/^Button Button1 = {3, 0, "Gpio for button1", 1 };$/;"	v
+GPCLR	switch_drv.c	/^	uint32_t GPCLR[2];$/;"	m	struct:GpioRegisters	file:
+GPFSEL	switch_drv.c	/^	uint32_t GPFSEL[6];$/;"	m	struct:GpioRegisters	file:
+GPIO_DRV_IOCTL_MAGIC	switch_drv.h	5;"	d
+GPIO_DRV_IOCTL_RESETGPIO	switch_drv.c	21;"	d	file:
+GPIO_DRV_IOCTL_SETGPIO	switch_drv.c	20;"	d	file:
+GPIO_DRV_MAX_NR	switch_drv.c	22;"	d	file:
+GPSET	switch_drv.c	/^	uint32_t GPSET[2];$/;"	m	struct:GpioRegisters	file:
+GpioRegisters	switch_drv.c	/^struct GpioRegisters {$/;"	s	file:
+LedDev_probe	switch_drv.c	/^static int LedDev_probe(struct gpio_drv_dev *dev) {$/;"	f	file:
+LedGpioPin	switch_drv.c	/^static int LedGpioPin;$/;"	v	file:
+Reserved1	switch_drv.c	/^	uint32_t Reserved1;$/;"	m	struct:GpioRegisters	file:
+Reserved2	switch_drv.c	/^	uint32_t Reserved2;$/;"	m	struct:GpioRegisters	file:
+SetGPIOFunction	switch_drv.c	/^static void SetGPIOFunction(int GPIO, int functionCode) {$/;"	f	file:
+SetGPIOOutputValue	switch_drv.c	/^static void SetGPIOOutputValue(int GPIO, bool outputValue)$/;"	f	file:
+_Button	switch_drv.c	/^struct _Button$/;"	s	file:
+_GPIO_DRV_H_	switch_drv.h	2;"	d
+button	switch_drv.c	/^typedef struct _Button button;$/;"	t	typeref:struct:_Button	file:
+cdev	switch_drv.h	/^  struct cdev cdev;	\/* Char device structure		*\/$/;"	m	struct:gpio_drv_dev	typeref:struct:gpio_drv_dev::cdev
+char_drv_fops	switch_drv.c	/^struct file_operations char_drv_fops = {$/;"	v	typeref:struct:file_operations
+description	switch_drv.c	/^    const char* description;$/;"	m	struct:_Button	file:
+devno	switch_drv.c	/^static dev_t devno=0;$/;"	v	file:
+gpio	switch_drv.c	/^    unsigned gpio;$/;"	m	struct:_Button	file:
+gpio_drv_cleanup_module	switch_drv.c	/^module_exit(gpio_drv_cleanup_module);$/;"	v
+gpio_drv_cleanup_module	switch_drv.c	/^void __exit gpio_drv_cleanup_module(void) {$/;"	f
+gpio_drv_dev	switch_drv.h	/^struct gpio_drv_dev {$/;"	s
+gpio_drv_device	switch_drv.c	/^struct gpio_drv_dev gpio_drv_device;    \/* allocated in char_drv_init *\/$/;"	v	typeref:struct:gpio_drv_dev
+gpio_drv_init	switch_drv.c	/^module_init(gpio_drv_init);$/;"	v
+gpio_drv_init	switch_drv.c	/^static int __init gpio_drv_init(void) {$/;"	f	file:
+gpio_drv_ioctl	switch_drv.c	/^long gpio_drv_ioctl(struct file *filep, unsigned int cmd, unsigned long arg) {$/;"	f
+gpio_drv_major	switch_drv.c	/^int gpio_drv_major = 0;$/;"	v
+gpio_drv_minor	switch_drv.c	/^int gpio_drv_minor = 0;$/;"	v
+gpio_drv_open	switch_drv.c	/^int gpio_drv_open(struct inode *inode, struct file *filp) {$/;"	f
+gpio_drv_release	switch_drv.c	/^int gpio_drv_release(struct inode *inode, struct file *filp) {	$/;"	f
+gpio_drv_setup	switch_drv.c	/^static void gpio_drv_setup(struct gpio_drv_dev *dev, int index)$/;"	f	file:
+gpio_num	switch_drv.c	/^	int gpio_num;$/;"	m	struct:gpio_number	file:
+gpio_number	switch_drv.c	/^struct gpio_number {$/;"	s	file:
+gpio_pin_number	switch_drv.h	/^  int gpio_pin_number;$/;"	m	struct:gpio_drv_dev
+int_config	switch_drv.c	/^void int_config(Button* button)$/;"	f
+int_release	switch_drv.c	/^void int_release(Button* button) {$/;"	f
+irq	switch_drv.c	/^    int irq;$/;"	m	struct:_Button	file:
+irq_handler	switch_drv.c	/^static irqreturn_t irq_handler(int irq, void *dev_id, struct pt_regs *regs) $/;"	f	file:
+last_value	switch_drv.c	/^    char last_value;$/;"	m	struct:_Button	file:
+s_pGpioRegisters	switch_drv.c	/^struct GpioRegisters *s_pGpioRegisters;$/;"	v	typeref:struct:GpioRegisters
