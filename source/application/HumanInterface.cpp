@@ -1,6 +1,7 @@
 #include "HumanInterface.h"
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 using std::cin;
 using std::cout;
@@ -20,7 +21,7 @@ HumanInterface::HumanInterface(int sysState):systemState(sysState) {
 		init_userInterfaceSM();	
 	}
 
-void HumanInterface::userInterfaceSM(PasswordManagement passwordManagent) {
+void HumanInterface::userInterfaceSM() {
 	typedef enum {
 		Default_st,
 		Admin_st,
@@ -71,12 +72,12 @@ void HumanInterface::userInterfaceSM(PasswordManagement passwordManagent) {
 			// write state do activity code here
 			
 
-			passwordManagement.requestAuthentication('admin','password');
+			//passwordManagement.requestAuthentication('admin','password');
 
 
 			// write the transtions here
 			//
-			if (userChoice==1) {
+			if (userChoice==1)  {
 				currentState=User_st;
 			} else if (userChoice==2) {
 				currentState=Admin_st;
@@ -88,7 +89,7 @@ void HumanInterface::userInterfaceSM(PasswordManagement passwordManagent) {
 		case User_st:
 
 
-			passwordManagement.requestAuthentication('user','password');
+			//passwordManagement.requestAuthentication('user','password');
 			break;
 	}	
 

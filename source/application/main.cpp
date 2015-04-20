@@ -11,10 +11,10 @@ int main() {
 
 	
 	HumanInterface humanInterface(0);
-	PasswordManagement passwordManagement();
+	//PasswordManagement passwordManagement();
 
 	while(1) {
-		humanInterface.userInterfaceSM(passwordManagement);
+		humanInterface.userInterfaceSM();
 	}
 
 	
