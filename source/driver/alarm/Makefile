@@ -10,8 +10,9 @@ ifneq ($(KERNELRELEASE),)
 else
 
 	# KERNELDIR ?= /lib/modules/$(shell uname -r)/build
-	KERNELDIR ?= /home/manoj/Manoj/raspberrypi/new/linux
-	# The current directory is passed to sub-makes as argument
+	# KERNELDIR ?= /home/manoj/Manoj/raspberrypi/new/linux
+	KERNELDIR ?= /home/manoj/Manoj/buildroot/rpi-buildroot/output/build/linux-rpi-3.19.y
+# The current directory is passed to sub-makes as argument
 	PWD := $(shell pwd)
 
 
